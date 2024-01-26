@@ -3,6 +3,7 @@ let app = express();
 let bodyParser = require("body-parser");
 let assignment = require("./routes/assignments");
 let user = require("./routes/users");
+let cors = require("cors");
 
 let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
@@ -26,6 +27,8 @@ mongoose.connect(uri, options).then(
     console.log("Erreur de connexion: ", err);
   }
 );
+
+app.use(cors());
 
 // Pour accepter les connexions cross-domain (CORS)
 app.use(function (req, res, next) {
