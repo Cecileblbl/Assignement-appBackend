@@ -30,6 +30,10 @@ function postAssignment(req, res) {
   assignment.nom = req.body.nom;
   assignment.dateDeRendu = req.body.dateDeRendu;
   assignment.rendu = req.body.rendu;
+  assignment.nomMatiere = req.body.nomMatiere;
+  assignment.note = req.body.note;
+  assignment.auteur = req.body.auteur;
+  assignment.remarques = req.body.remarques;
 
   console.log("POST D@UN NOUCEL ASSIGNMENT");
   console.log("Donnes reçues: ", req.body);
